@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<header id="home-header">
+  <div class="container space-y-4">
+    <ul class="header-pill-group">
+      {% if site.content.type %}
+      <li class="header-pill">{{ site.content.type }}</li>
+      {% endif %} {% if site.conference.name and site.conference.year %}
+      <li class="header-pill">
+        {{ site.conference.name }} {{ site.conference.year }}
+      </li>
+      {% endif %}
+    </ul>
+    <h1>{{ site.title }}</h1>
+    {% if site.content.authors %}
+    <p>
+      {%- for author in site.content.authors -%} {%- if forloop.first -%}
+      <a href="{{ author.url }}" target="_blank" class="link"
+        >{{ author.name | escape }}</a
+      >
+      {%- elsif forloop.last -%} {%- if forloop.length > 1 -%}&nbsp;&amp; {%
+      endif -%}
+      <a href="{{ author.url }}" target="_blank" class="link"
+        >{{ author.name | escape }}</a
+      >
+      {%- else -%} ,
+      <a href="{{ author.url }}" target="_blank" class="link"
+        >{{ author.name | escape }}</a
+      >
+      {%- endif -%} {%- endfor -%}
+    </p>
+    {% endif %} {% if site.content.affiliation %}
+    <p class="text-sm text-zinc-600 dark:text-zinc-400">
+      <a href="{{ site.content.affiliation.url }}" target="_blank" class="link"
+        >{{ site.content.affiliation.department }}</a
+      >, {{ site.content.affiliation.name }}
+    </p>
+    {% endif %}
+    <ul class="header-button-group">
+      {%- for link in site.content.links -%}
+      <li>
+        <a href="{{ link.url }}" target="_blank" class="header-button"
+          >{{ link.label }} ↗</a
+        >
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</header>
+<main class="py-8">
+  <div class="container space-y-8">
+    {% if site.pages %}
+    <section>
+      <h2>Pages</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page'
+        or p.data.layout == 'page'" -%} {% for p in pages_list %}
+        <li>
+          <a href="{{ p.url | relative_url }}" class="page-card group">
+            <h3>{{ p.title | escape }}</h3>
+            <p>{{ p.description | escape }}</p>
+            <div class="arrow-icon" aria-hidden="true">→</div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <hr />
+    {% endif %}
+    <article class="article-content">{{content}}</article>
+  </div>
+</main>

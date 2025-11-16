@@ -1,0 +1,53 @@
+<button
+  id="nav-toggle"
+  aria-expanded="false"
+  aria-controls="mobile-menu"
+  aria-label="Open Menu"
+  class="md:hidden fixed cursor-pointer top-4 size-12 flex items-center justify-center rounded-full right-4 font-medium bg-zinc-100/50 dark:bg-zinc-900/50 backdrop-blur-xs border border-zinc-200/50 dark:border-zinc-800/50 focus:outline-hidden"
+  style="z-index: 50"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    class="size-6"
+    aria-hidden="true"
+  >
+    <path
+      id="nav-close-icon"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M6 18 18 6M6 6l12 12"
+      class="icon hidden"
+    />
+    <path
+      id="nav-open-icon"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      class="icon"
+    />
+  </svg>
+  <span class="sr-only">Menu</span>
+</button>
+
+<div
+  id="mobile-menu"
+  class="fixed space-y-4 top-0 left-0 px-4 py-24 transition ease-in-out duration-200 w-screen h-screen flex-col items-start justify-start bg-white dark:bg-zinc-950 z-40 hidden"
+>
+  <h2 class="text-2xl font-semibold">Pages</h2>
+  <ul class="space-y-2">
+    {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page' or
+    p.data.layout == 'page'" -%} {% for p in pages_list %}
+    <li>
+      <a href="{{ p.url | relative_url }}" class="page-card">
+        <h3>{{ p.title | escape }}</h3>
+        <p>{{ p.description | escape }}</p>
+        <div class="arrow-icon" aria-hidden="true">→</div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
