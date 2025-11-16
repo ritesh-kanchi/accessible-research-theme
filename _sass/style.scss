@@ -147,6 +147,8 @@ $tw-space-x-reverse: 0;
 
 $tw-border-style: solid;
 $tw-leading: 1.5;
+$tw-backdrop-brightness: brightness(1);
+$tw-backdrop-blur: blur($blur-xs);
 
 *,
 ::after,
@@ -585,48 +587,35 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   color: $color-zinc-900;
 }
 
-$tw-backdrop-blur: blur($blur-xs);
-
 .backdrop-blur-xs {
-  -webkit-backdrop-filter: $tw-backdrop-blur $tw-backdrop-brightness
-    $tw-backdrop-contrast $tw-backdrop-grayscale $tw-backdrop-hue-rotate
-    $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate
-    $tw-backdrop-sepia;
-  backdrop-filter: $tw-backdrop-blur $tw-backdrop-brightness
-    $tw-backdrop-contrast $tw-backdrop-grayscale $tw-backdrop-hue-rotate
-    $tw-backdrop-invert $tw-backdrop-opacity $tw-backdrop-saturate
-    $tw-backdrop-sepia;
+  -webkit-backdrop-filter: $tw-backdrop-blur;
+  backdrop-filter: $tw-backdrop-blur;
 }
 
 .transition {
   transition-property: color, background-color, border-color, outline-color,
-    text-decoration-color, fill, stroke, $tw-gradient-from, $tw-gradient-via,
-    $tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate,
-    filter, -webkit-backdrop-filter, backdrop-filter, display,
-    content-visibility, overlay, pointer-events;
-  transition-timing-function: $tw-ease, $default-transition-timing-function;
-  transition-duration: $tw-duration, $default-transition-duration;
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+    translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter,
+    display, content-visibility, overlay, pointer-events;
+  transition-timing-function: $default-transition-timing-function;
+  transition-duration: $default-transition-duration;
 }
 .transition-all {
   transition-property: all;
-  transition-timing-function: $tw-ease, $default-transition-timing-function;
-  transition-duration: $tw-duration, $default-transition-duration;
+  transition-timing-function: $default-transition-timing-function;
+  transition-duration: $default-transition-duration;
 }
 .transition-colors {
   transition-property: color, background-color, border-color, outline-color,
-    text-decoration-color, fill, stroke, $tw-gradient-from, $tw-gradient-via,
-    $tw-gradient-to;
-  transition-timing-function: $tw-ease, $default-transition-timing-function;
-  transition-duration: $tw-duration, $default-transition-duration;
+    text-decoration-color, fill, stroke;
+  transition-timing-function: $default-transition-timing-function;
+  transition-duration: $default-transition-duration;
 }
-.duration-200 {
-  $tw-duration: 200ms;
-  transition-duration: 200ms;
-}
+
 .ease-in-out {
-  $tw-ease: $ease-in-out;
   transition-timing-function: $ease-in-out;
 }
+
 .hover\:text-zinc-900 {
   &:hover {
     @media (hover: hover) {
@@ -1360,12 +1349,11 @@ body {
   font-weight: $font-weight-medium;
   color: $color-white;
   transition-property: color, background-color, border-color, outline-color,
-    text-decoration-color, fill, stroke, $tw-gradient-from, $tw-gradient-via,
-    $tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate,
-    filter, -webkit-backdrop-filter, backdrop-filter, display,
-    content-visibility, overlay, pointer-events;
-  transition-timing-function: $tw-ease, $default-transition-timing-function;
-  transition-duration: $tw-duration, $default-transition-duration;
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+    translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter,
+    display, content-visibility, overlay, pointer-events;
+  transition-timing-function: $default-transition-timing-function;
+  transition-duration: $default-transition-duration;
   &:hover {
     @media (hover: hover) {
       border-color: $color-blue-500;
@@ -1410,12 +1398,11 @@ body {
   border-color: $color-zinc-200;
   padding: calc($spacing) * 4;
   transition-property: color, background-color, border-color, outline-color,
-    text-decoration-color, fill, stroke, $tw-gradient-from, $tw-gradient-via,
-    $tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate,
-    filter, -webkit-backdrop-filter, backdrop-filter, display,
-    content-visibility, overlay, pointer-events;
-  transition-timing-function: $tw-ease, $default-transition-timing-function;
-  transition-duration: $tw-duration, $default-transition-duration;
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+    translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter,
+    display, content-visibility, overlay, pointer-events;
+  transition-timing-function: $default-transition-timing-function;
+  transition-duration: $default-transition-duration;
   &:hover {
     @media (hover: hover) {
       background-color: $color-zinc-50;
