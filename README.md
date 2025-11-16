@@ -14,7 +14,7 @@ This theme helps researchers quickly publish accessible, clean, and simple compa
 - Solid mobile navigation experience
 
 Live Example:
-[Systems for Scaling Accessibility Efforts in Large Computing Courses](https://g.ritesh-kanchi.com/sigcse26-systems-for-scaling-accessibility/)
+[Systems for Scaling Accessibility Efforts in Large Computing Courses](https://g.riteshkanchi.com/sigcse26-systems-for-scaling-accessibility/)
 
 ## Features
 
