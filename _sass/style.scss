@@ -160,7 +160,7 @@ html,
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
-  font-family: --default-font-family, ui-sans-serif, system-ui, sans-serif,
+  font-family: $default-font-family, ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-tap-highlight-color: transparent;
 }
@@ -195,10 +195,10 @@ code,
 kbd,
 samp,
 pre {
-  font-family: --default-mono-font-family, ui-monospace, SFMono-Regular, Menlo,
+  font-family: $default-mono-font-family, ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-feature-settings: --default-mono-font-feature-settings, normal;
-  font-variation-settings: --default-mono-font-variation-settings, normal;
+  font-feature-settings: $default-mono-font-feature-settings, normal;
+  font-variation-settings: $default-mono-font-variation-settings, normal;
   font-size: 1em;
 }
 small {
@@ -349,16 +349,16 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   position: fixed;
 }
 .top-0 {
-  top: calc(--spacing) * 0;
+  top: calc($spacing) * 0;
 }
 .top-4 {
-  top: calc(--spacing) * 4;
+  top: calc($spacing) * 4;
 }
 .right-4 {
-  right: calc(--spacing) * 4;
+  right: calc($spacing) * 4;
 }
 .left-0 {
-  left: calc(--spacing) * 0;
+  left: calc($spacing) * 0;
 }
 .z-40 {
   z-index: 40;
@@ -388,7 +388,7 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   margin-inline: auto;
 }
 .mb-4 {
-  margin-bottom: calc(--spacing) * 4;
+  margin-bottom: calc($spacing) * 4;
 }
 .flex {
   display: flex;
@@ -400,12 +400,12 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   display: none;
 }
 .size-6 {
-  width: calc(--spacing) * 6;
-  height: calc(--spacing) * 6;
+  width: calc($spacing) * 6;
+  height: calc($spacing) * 6;
 }
 .size-12 {
-  width: calc(--spacing) * 12;
-  height: calc(--spacing) * 12;
+  width: calc($spacing) * 12;
+  height: calc($spacing) * 12;
 }
 .h-full {
   height: 100%;
@@ -420,10 +420,10 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   width: 100vw;
 }
 .max-w-3xl {
-  max-width: --container-3xl;
+  max-width: $container-3xl;
 }
 .max-w-6xl {
-  max-width: --container-6xl;
+  max-width: $container-6xl;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -453,41 +453,33 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   justify-content: flex-start;
 }
 .gap-4 {
-  gap: calc(--spacing) * 4;
+  gap: calc($spacing * 4);
 }
 
 .space-y-2 {
   :where(& > :not(:last-child)) {
-    margin-block-start: calc(calc(var(--spacing) * 2) * $tw-space-y-reverse);
-    margin-block-end: calc(
-      calc(var(--spacing) * 2) * calc(1 - $tw-space-y-reverse)
-    );
+    margin-block-start: calc(calc($spacing * 2) * $tw-space-y-reverse);
+    margin-block-end: calc(calc($spacing * 2) * calc(1 - $tw-space-y-reverse));
   }
 }
 .space-y-4 {
   :where(& > :not(:last-child)) {
-    margin-block-start: calc(calc(var(--spacing) * 4) * $tw-space-y-reverse);
-    margin-block-end: calc(
-      calc(var(--spacing) * 4) * calc(1 - $tw-space-y-reverse)
-    );
+    margin-block-start: calc(calc($spacing * 4) * $tw-space-y-reverse);
+    margin-block-end: calc(calc($spacing * 4) * calc(1 - $tw-space-y-reverse));
   }
 }
 
 .space-y-8 {
   :where(& > :not(:last-child)) {
-    margin-block-start: calc(calc(var(--spacing) * 8) * $tw-space-y-reverse);
-    margin-block-end: calc(
-      calc(var(--spacing) * 8) * calc(1 - $tw-space-y-reverse)
-    );
+    margin-block-start: calc(calc($spacing * 8) * $tw-space-y-reverse);
+    margin-block-end: calc(calc($spacing * 8) * calc(1 - $tw-space-y-reverse));
   }
 }
 
 .space-x-8 {
   :where(& > :not(:last-child)) {
-    margin-inline-start: calc(calc(var(--spacing) * 8) * $tw-space-x-reverse);
-    margin-inline-end: calc(
-      calc(var(--spacing) * 8) * calc(1 - $tw-space-x-reverse)
-    );
+    margin-inline-start: calc(calc($spacing * 8) * $tw-space-x-reverse);
+    margin-inline-end: calc(calc($spacing * 8) * calc(1 - $tw-space-x-reverse));
   }
 }
 
@@ -529,22 +521,22 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   }
 }
 .p-4 {
-  padding: calc(--spacing) * 4;
+  padding: calc($spacing) * 4;
 }
 .px-4 {
-  padding-inline: calc(--spacing) * 4;
+  padding-inline: calc($spacing) * 4;
 }
 .py-6 {
-  padding-block: calc(--spacing) * 6;
+  padding-block: calc($spacing) * 6;
 }
 .py-8 {
-  padding-block: calc(--spacing) * 8;
+  padding-block: calc($spacing) * 8;
 }
 .py-24 {
-  padding-block: calc(--spacing) * 24;
+  padding-block: calc($spacing) * 24;
 }
 .py-32 {
-  padding-block: calc(--spacing) * 32;
+  padding-block: calc($spacing) * 32;
 }
 .text-center {
   text-align: center;
@@ -556,28 +548,28 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   font-family: $font-sans;
 }
 .text-2xl {
-  font-size: --text-2xl;
-  line-height: $tw-leading, --text-2xl--line-height;
+  font-size: $text-2xl;
+  line-height: $tw-leading, $text-2xl--line-height;
 }
 .text-3xl {
-  font-size: --text-3xl;
-  line-height: $tw-leading, --text-3xl--line-height;
+  font-size: $text-3xl;
+  line-height: $tw-leading, $text-3xl--line-height;
 }
 .text-4xl {
-  font-size: --text-4xl;
-  line-height: $tw-leading, --text-4xl--line-height;
+  font-size: $text-4xl;
+  line-height: $tw-leading, $text-4xl--line-height;
 }
 .text-sm {
-  font-size: --text-sm;
-  line-height: $tw-leading, --text-sm--line-height;
+  font-size: $text-sm;
+  line-height: $tw-leading, $text-sm--line-height;
 }
 .font-medium {
-  $tw-font-weight: --font-weight-medium;
-  font-weight: --font-weight-medium;
+  $tw-font-weight: $font-weight-medium;
+  font-weight: $font-weight-medium;
 }
 .font-semibold {
-  $tw-font-weight: --font-weight-semibold;
-  font-weight: --font-weight-semibold;
+  $tw-font-weight: $font-weight-semibold;
+  font-weight: $font-weight-semibold;
 }
 .text-balance {
   text-wrap: balance;
@@ -592,7 +584,7 @@ input:where([type="button"], [type="reset"], [type="submit"]),
   color: $color-zinc-900;
 }
 
-$tw-backdrop-blur: blur(--blur-xs);
+$tw-backdrop-blur: blur($blur-xs);
 
 .backdrop-blur-xs {
   -webkit-backdrop-filter: $tw-backdrop-blur $tw-backdrop-brightness
