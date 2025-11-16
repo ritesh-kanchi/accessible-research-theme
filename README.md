@@ -1,10 +1,11 @@
-# Accessible Research Theme (cooler name TBD)
+<img width="150" alt="Axya" src="axya.svg" />
 
-**A theme that is very much under construction**
+**An accessible Jekyll theme for research websites.**
 
-An accessible Jekyll theme for research websites.
+> [!IMPORTANT]
+> This repository is under construction and active development.
 
-This theme helps researchers quickly publish accessible, clean, and simple companion sites for their papers, posters, and projects. Most Jekyll themes overlook accessibility — this one aims for:
+Axya is a Jekyll theme that helps researchers quickly publish accessible, clean, and modern companion sites for their papers, posters, and projects. Most Jekyll themes overlook accessibility—this one aims for:
 
 - WCAG 2.1 AAA compliance
 - Screen‑reader‑friendly semantics
@@ -28,38 +29,34 @@ Live Example:
   - Research links (PDF, DOI, supplemental, etc.)
 - Fully responsive
 
-## Todo List (in no particular order nor exhaustive)
-
-- [ ] Navbar improvements
-- [ ] Mobile Nav improvements
-- [ ] WCAG 2.1 AAA compliance audit
-- [ ] Screen reader testing
-- [ ] Keyboard navigation testing
-- [ ] Provide greater extensibility (e.g., more configuration options)
-- [ ] Allow more flexibility via SASS than hardcoded CSS
-- [ ] Add more features (e.g., blog support, more layouts)
-- [ ] Improve documentation
-- [ ] Allow for external links as part of the homepage grid
-- [ ] Allow for greater customization (colors, fonts, etc.)
-
 ## Installation
 
 ### 1. Using as a Remote Theme (GitHub Pages compatible)
 
-Add this to your `_config.yml`:
+First, follow the usage for [jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme).
+
+Then, add this to your `_config.yml`:
 
 ```yaml
-plugins:
-  - jekyll-remote-theme
-
-remote_theme: ritesh-kanchi/accessible-research-theme
+remote_theme: ritesh-kanchi/axya@main
 ```
 
 Then run:
 
 ```bash
-bundle install
 bundle exec jekyll serve
+```
+
+> [!WARNING]
+> jekyll-remote-theme has its own problems, and may not work out of the box. Including the following gems may help:
+
+```Gemfile
+gem 'csv'
+gem 'base64'
+gem 'bigdecimal'
+
+gem "jekyll", "4.3.3"
+gem "jekyll-remote-theme", "~> 0.4.3"
 ```
 
 ### 2. Installing the Gem Locally
@@ -67,25 +64,25 @@ bundle exec jekyll serve
 Build the gem:
 
 ```bash
-gem build accessible-research-theme.gemspec
+gem build axya.gemspec
 ```
 
 Install it:
 
 ```bash
-gem install ./accessible-research-theme-0.1.0.gem
+gem install ./axya-0.0.1.gem
 ```
 
 Then in your site’s `Gemfile`:
 
 ```ruby
-gem "accessible-research-theme"
+gem "axya"
 ```
 
 And in `_config.yml`:
 
 ```yaml
-theme: accessible-research-theme
+theme: axya
 ```
 
 ## Usage
@@ -139,6 +136,6 @@ I appreciate any feedback or suggestions for improvements!
 
 This theme is open source under the MIT License.
 
-## Notes
+## Where does Axya come from?
 
-The CSS for this theme is generated using Tailwind CSS. See: [“How to quickly add Tailwind to an existing Jekyll site”](https://syntaxjournal.com/how-to-add-tailwindcss-jekyll/)
+A riff on "A11y" (if you can imagine the "x" being two crossed 1's.)
