@@ -3,6 +3,9 @@
 title: Research Title
 description: An accompanying website for a research paper.
 
+baseurl: ""
+url: "https://example.com"
+
 conference:
   name: Conference Name
   year: 2026
@@ -19,7 +22,6 @@ content:
       url: https://www.starwars.com/databank/darth-vader
     - name: Emperor Palpatine
       url: https://www.starwars.com/databank/emperor-palpatine
-  doi: 10.1145/XXXXXXX.XXXXXXX
   links:
     - label: Paper Link
       url: https://doi.org/10.1145/XXXXXXX.XXXXXXX

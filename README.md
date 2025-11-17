@@ -103,6 +103,9 @@ Add the following fields to your `_config.yml` to customize your research site:
 title: Research Title
 description: An accompanying website for a research paper.
 
+baseurl: ""
+url: "https://example.com"
+
 conference:
   name: Conference Name
   year: 2026
