@@ -1,14 +1,14 @@
 @use "../abstracts/" as abstracts;
 
 nav {
-  background-color: abstracts.$color-background;
+  background-color: var(--color-background);
   top: 0;
   padding-inline: calc(abstracts.$spacing * 4);
   padding: calc(abstracts.$spacing * 4) 0;
   width: 100%;
   z-index: 50;
   border-bottom: 1px solid;
-  border-color: abstracts.$color-border;
+  border-color: var(--color-border);
 
   @media screen and (min-width: abstracts.$breakpoint-md) {
     padding-inline: calc(abstracts.$spacing * 8);
@@ -34,7 +34,7 @@ nav {
 
       li a {
         //  class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-all"
-        color: abstracts.$color-text;
+        color: var(--color-text);
       }
     }
   }
@@ -42,6 +42,6 @@ nav {
   #site-title {
     // font-medium text-zinc-900 md:text-zinc-700 md:hover:text-zinc-900 transition-all dark:text-white md:dark:text-zinc-300 dark:md:hover:text-white site-title"
     font-weight: abstracts.$font-weight-semibold;
-    color: abstracts.$color-text;
+    color: var(--color-text);
   }
 }

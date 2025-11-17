@@ -18,7 +18,7 @@
   background-color: abstracts.$color-zinc-100;
   border-style: abstracts.$border-style;
   border-width: abstracts.$border-width;
-  border-color: abstracts.$color-border;
+  border-color: var(--color-border);
   z-index: 50;
 
   &:focus {
@@ -49,7 +49,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background-color: abstracts.$color-background;
+  background-color: var(--color-background);
   z-index: 40;
   transition-property: all;
   transition-timing-function: ease-in-out;

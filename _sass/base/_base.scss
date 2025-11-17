@@ -1,13 +1,13 @@
 @use "../abstracts/" as abstracts;
 
 body {
-  background-color: abstracts.$color-background;
-  color: abstracts.$color-text;
+  background-color: var(--color-background);
+  color: var(--color-text);
   scroll-behavior: smooth;
 }
 
 hr {
-  border-color: abstracts.$color-border;
+  border-color: var(--color-border);
 }
 
 .container {

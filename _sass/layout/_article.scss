@@ -1,7 +1,7 @@
 @use "../abstracts/" as abstracts;
 
 .article-content {
-  color: abstracts.$color-zinc-700;
+  color: abstracts.$prose-body;
   max-width: 65ch;
   :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     margin-top: 1.25em;
@@ -468,17 +468,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    color: abstracts.$color-black;
-  }
-  @media (prefers-color-scheme: dark) {
-    &
-      :is(
-        :where(h1, h2, h3, h4, h5, h6, th):not(
-            :where([class~="not-prose"], [class~="not-prose"] *)
-          )
-      ) {
-      color: abstracts.$color-white;
-    }
+    color: var(--color-headings);
   }
   &
     :is(
@@ -486,7 +476,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    border-color: abstracts.$color-zinc-200;
+    border-color: abstracts.$prose-quote-borders;
   }
   &
     :is(
@@ -502,7 +492,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    color: abstracts.$color-zinc-600;
+    color: abstracts.$prose-quotes;
   }
   &
     :is(
@@ -511,26 +501,6 @@
         )
     ) {
     font-style: normal;
-  }
-  @media (prefers-color-scheme: dark) {
-    &
-      :is(
-        :where(blockquote):not(
-            :where([class~="not-prose"], [class~="not-prose"] *)
-          )
-      ) {
-      border-color: abstracts.$color-zinc-800;
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    &
-      :is(
-        :where(blockquote):not(
-            :where([class~="not-prose"], [class~="not-prose"] *)
-          )
-      ) {
-      color: abstracts.$color-zinc-400;
-    }
   }
   &
     :is(
@@ -543,10 +513,7 @@
 .article-content pre {
   border-style: abstracts.$border-style;
   border-width: abstracts.$border-width;
-  border-color: abstracts.$color-zinc-200;
-  @media (prefers-color-scheme: dark) {
-    border-color: abstracts.$color-zinc-800;
-  }
+  border-color: var(--color-border);
 }
 .article-content blockquote p:first-of-type::before,
 .article-content blockquote p:last-of-type::after {

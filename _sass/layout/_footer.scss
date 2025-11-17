@@ -1,9 +1,9 @@
 @use "../abstracts/" as abstracts;
 
-$footer-bg-color: abstracts.$color-background;
-$footer-border-color: abstracts.$color-border;
-$footer-text-color: abstracts.$color-text;
-$footer-link-color: abstracts.$color-links;
+$footer-bg-color: var(--color-background);
+$footer-border-color: var(--color-border);
+$footer-text-color: var(--color-text);
+$footer-link-color: var(--color-links);
 
 footer {
   background: $footer-bg-color;

@@ -27,43 +27,91 @@ $font-text: "Inter", "SF Pro", $font-sans !default;
 $font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace !default;
 
-// Content (light)
-$color-headings: $color-black !default;
-$color-text: $color-zinc-700 !default;
-$color-background: $color-white !default;
-$color-border: $color-zinc-200 !default;
-$color-links: $color-zinc-900 !default;
+$colors-zinc: (
+  50: $color-zinc-50,
+  100: $color-zinc-100,
+  200: $color-zinc-200,
+  300: $color-zinc-300,
+  400: $color-zinc-400,
+  500: $color-zinc-500,
+  600: $color-zinc-600,
+  700: $color-zinc-700,
+  800: $color-zinc-800,
+  900: $color-zinc-900,
+  950: $color-zinc-950,
+);
 
-// Content (dark)
-$color-headings-dark: $color-white !default;
-$color-text-dark: $color-zinc-400 !default;
-$color-background-dark: $color-zinc-950 !default;
-$color-border-dark: $color-zinc-800 !default;
+$colors-blue: (
+  500: $color-blue-500,
+  600: $color-blue-600,
+  700: $color-blue-700,
+);
+
+$colors-light: (
+  headings: $color-black,
+  text: $color-zinc-700,
+  background: $color-white,
+  background-hover: $color-zinc-50,
+  border: $color-zinc-200,
+  links: $color-zinc-900,
+);
+
+$colors-dark: (
+  headings: $color-white,
+  text: $color-zinc-400,
+  background: $color-zinc-950,
+  background-hover: $color-zinc-900,
+  border: $color-zinc-800,
+  links: $color-zinc-200,
+);
+
+:root {
+  @each $key, $value in $colors-light {
+    --color-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $colors-zinc {
+    --color-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $colors-blue {
+    --color-#{$key}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $key, $value in $colors-dark {
+      --color-#{$key}: #{$value};
+    }
+  }
+}
 
 // Article Prose
-$prose-body: $color-text;
-$prose-headings: $color-headings;
-$prose-lead: $color-zinc-600;
-$prose-links: $color-links;
-$prose-bold: $color-headings;
-$prose-counters: $color-zinc-500;
-$prose-bullets: $color-zinc-300;
-$prose-hr: $color-border;
-$prose-quotes: $color-zinc-950;
+$prose-body: var(--color-text);
+$prose-headings: var(--color-headings);
+$prose-background: var(--color-background);
+$prose-lead: var(--color-zinc-500);
+$prose-links: var(--color-links);
+$prose-bold: $prose-headings;
+$prose-counters: var(--color-text);
+$prose-bullets: var(--color-text);
+$prose-hr: var(--color-border);
+$prose-quotes: var(--color-text);
 $prose-quote-borders: $prose-hr;
-$prose-captions: $color-zinc-500;
-$prose-kbd: $color-zinc-900;
+$prose-captions: var(--color-text);
+$prose-kbd: var(--color-zinc-900);
 $prose-kbd-shadows: color-mix(
   in oklab,
   oklch(21% 0.006 285.885) 10%,
   transparent
 );
-$prose-code: $color-zinc-900;
+$prose-code: var(--color-zinc-900);
 $prose-pre-bg: oklch(20% 0.01 285.885);
-$prose-pre-text: $color-zinc-200;
-$prose-pre-code: $color-zinc-800;
-$prose-th-borders: $color-zinc-300;
-$prose-td-borders: $color-zinc-200;
+$prose-pre-text: var(--color-zinc-200);
+$prose-pre-code: var(--color-zinc-800);
+$prose-th-borders: var(--color-zinc-300);
+$prose-td-borders: var(--color-zinc-200);
 
 // Typography
 $text-sm: 0.875rem;

@@ -19,9 +19,6 @@
   p {
     font-size: abstracts.$text-lg;
     line-height: abstracts.$leading, abstracts.$text-lg--line-height;
-    color: abstracts.$color-zinc-600;
-    @media (prefers-color-scheme: dark) {
-      color: abstracts.$color-zinc-400;
-    }
+    color: var(--color-text);
   }
 }
