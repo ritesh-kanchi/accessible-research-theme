@@ -1,8 +1,33 @@
+@use "../abstracts/";
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $font-display;
+  font-family: abstracts.$font-display;
+}
+
+html,
+body {
+  color: abstracts.$prose-body;
+  font-family: abstracts.$font-text;
+}
+
+section h2 {
+  font-size: abstracts.$text-2xl;
+  line-height: abstracts.$leading, abstracts.$text-2xl--line-height;
+  font-weight: abstracts.$font-weight-semibold;
+}
+
+b,
+strong {
+  font-weight: abstracts.$font-weight-semibold;
+}
+
+.link {
+  font-weight: abstracts.$font-weight-medium;
+  color: abstracts.$color-links;
+  text-decoration-line: underline;
 }

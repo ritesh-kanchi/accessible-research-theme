@@ -21,24 +21,24 @@ $color-blue-700: oklch(48.8% 0.243 264.376);
 // Fonts
 $font-display: "Inter Tight", "Inter", "SF Pro", ui-sans-serif, system-ui,
   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-  "Noto Color Emoji";
+  "Noto Color Emoji" !default;
 $font-text: "Inter", "SF Pro", ui-sans-serif, system-ui, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-  "Liberation Mono", "Courier New", monospace;
+  "Liberation Mono", "Courier New", monospace !default;
 
 // Content (light)
-$color-headings: $color-black;
-$color-text: $color-zinc-700;
-$color-background: $color-white;
-$color-border: $color-zinc-200;
-$color-links: $color-blue-600;
+$color-headings: $color-black !default;
+$color-text: $color-zinc-700 !default;
+$color-background: $color-white !default;
+$color-border: $color-zinc-200 !default;
+$color-links: $color-blue-600 !default;
 
 // Content (dark)
-$color-headings-dark: $color-white;
-$color-text-dark: $color-zinc-400;
-$color-background-dark: $color-zinc-950;
-$color-border-dark: $color-zinc-800;
+$color-headings-dark: $color-white !default;
+$color-text-dark: $color-zinc-400 !default;
+$color-background-dark: $color-zinc-950 !default;
+$color-border-dark: $color-zinc-800 !default;
 
 // Article Prose
 $prose-body: $color-text;
@@ -47,7 +47,7 @@ $prose-lead: $color-zinc-600;
 $prose-links: $color-link;
 $prose-bold: $color-headings;
 $prose-counters: $color-zinc-500;
-$tw-prose-bullets: $color-zinc-300;
+$prose-bullets: $color-zinc-300;
 $prose-hr: $color-border;
 $prose-quotes: $color-zinc-950;
 $prose-quote-borders: $prose-hr;
@@ -91,6 +91,12 @@ $container-5xl: 64rem;
 $container-6xl: 72rem;
 
 // Breakpoints
+// $breakpoints: (
+//   "sm": 30rem,
+//   "md": 48rem,
+//   "lg": 64rem,
+//   "xl": 80rem,
+// ) !default;
 $breakpoint-sm: 30rem;
 $breakpoint-md: 48rem;
 $breakpoint-lg: 64rem;
@@ -98,3 +104,5 @@ $breakpoint-xl: 80rem;
 
 // Other
 $border-style: solid;
+$border-width: 1px;
+$rounded-full: calc(infinity * 1px);

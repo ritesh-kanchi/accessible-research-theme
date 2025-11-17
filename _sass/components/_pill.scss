@@ -1,0 +1,15 @@
+@use "../abstracts/";
+
+.header-pill {
+  display: inline-block;
+  border-radius: calc(infinity * 1px);
+  border-style: abstracts.$border-style;
+  border-width: abstracts.$border-width;
+  border-color: abstracts.$color-border;
+  background-color: abstracts.$color-background;
+  padding-inline: calc(abstracts.$spacing) * 3;
+  padding-block: calc(abstracts.$spacing) * 1;
+  font-size: abstracts.$text-sm;
+  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+  font-weight: abstracts.$font-weight-medium;
+}

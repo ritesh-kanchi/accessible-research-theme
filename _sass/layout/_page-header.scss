@@ -1,21 +1,22 @@
+@use "../abstracts/";
+
 #page-header {
-  padding-inline: calc($spacing) * 4;
-  padding-top: calc($spacing) * 16;
-  @media (width >= 48rem) {
-    padding-inline: calc($spacing) * 8;
+  padding-inline: calc(abstracts.$spacing) * 4;
+  padding-top: calc(abstracts.$spacing) * 16;
+  @media (width >= abstracts.$breakpoint-md) {
+    padding-inline: calc(abstracts.$spacing) * 8;
   }
 }
 #page-header h1 {
-  font-size: $text-3xl;
-  line-height: $tw-leading, $text-3xl--line-height;
-  $tw-font-weight: $font-weight-semibold;
-  font-weight: $font-weight-semibold;
+  font-size: abstracts.$text-3xl;
+  line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
+  font-weight: abstracts.$font-weight-semibold;
 }
 #page-header p {
-  font-size: $text-lg;
-  line-height: $tw-leading, $text-lg--line-height;
-  color: $color-zinc-600;
+  font-size: abstracts.$text-lg;
+  line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+  color: abstracts.$color-zinc-600;
   @media (prefers-color-scheme: dark) {
-    color: $color-zinc-400;
+    color: abstracts.$color-zinc-400;
   }
 }

@@ -1,46 +1,5 @@
 @use "../abstracts/";
 
-.page-card h3 {
-  font-size: abstracts.$text-lg;
-  line-height: abstracts.$leading, abstracts.$text-lg--line-height;
-  font-weight: abstracts.$font-weight-semibold;
-}
-.page-card p {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  font-size: abstracts.$text-sm;
-  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
-  color: abstracts.$color-zinc-600;
-  @media (prefers-color-scheme: dark) {
-    color: abstracts.$color-zinc-400;
-  }
-}
-.page-card .arrow-icon {
-  pointer-events: none;
-  position: absolute;
-  top: calc(abstracts.$spacing) * 2;
-  right: calc(abstracts.$spacing) * 2;
-  width: calc(abstracts.$spacing) * 5;
-  height: calc(abstracts.$spacing) * 5;
-  color: abstracts.$color-zinc-500;
-  -webkit-user-select: none;
-  user-select: none;
-  &:is(:where(.group):hover *) {
-    color: abstracts.$color-zinc-600;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: abstracts.$color-zinc-400;
-  }
-  @media (prefers-color-scheme: dark) {
-    &:is(:where(.group):hover *) {
-      color: abstracts.$color-zinc-500;
-    }
-  }
-}
-
 .page-card {
   position: relative;
   display: block;
@@ -53,7 +12,7 @@
   border-radius: abstracts.$radius-lg;
   border-style: abstracts.$border-style;
   border-width: abstracts.$border-width;
-  border-color: abstracts.$color-zinc-200;
+  border-color: abstracts.$color-border;
   padding: calc(abstracts.$spacing) * 4;
   transition-property: color, background-color, border-color, outline-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform,
@@ -71,5 +30,37 @@
     &:hover {
       background-color: abstracts.$color-zinc-900;
     }
+  }
+}
+
+.page-card h3 {
+  font-size: abstracts.$text-lg;
+  line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+  font-weight: abstracts.$font-weight-semibold;
+  color: abstracts.$color-headings;
+}
+
+.page-card p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  font-size: abstracts.$text-sm;
+  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+  color: abstracts.$color-text;
+}
+.page-card .arrow-icon {
+  pointer-events: none;
+  position: absolute;
+  top: calc(abstracts.$spacing) * 2;
+  right: calc(abstracts.$spacing) * 2;
+  width: calc(abstracts.$spacing) * 5;
+  height: calc(abstracts.$spacing) * 5;
+  color: abstracts.$color-zinc-500;
+  -webkit-user-select: none;
+  user-select: none;
+  &:is(:where(.group):hover *) {
+    color: abstracts.$color-zinc-600;
   }
 }

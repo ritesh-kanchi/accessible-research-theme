@@ -1,0 +1,33 @@
+@use "../abstracts/";
+
+$header-button-bg-color: abstracts.$color-blue-600;
+$header-button-border-color: abstracts.$color-blue-600;
+$header-button-text-color: abstracts.$color-white;
+$header-button-bg-hover-color: abstracts.$color-blue-500;
+$header-button-border-hover-color: abstracts.$color-blue-500;
+
+.header-button {
+  display: inline-block;
+  border-radius: calc(infinity * 1px);
+  border-style: abstracts.$border-style;
+  border-width: 1px;
+  border-color: $header-button-border-color;
+  background-color: $header-button-bg-color;
+  padding-inline: calc(abstracts.$spacing) * 3;
+  padding-block: calc(abstracts.$spacing) * 1;
+  font-size: abstracts.$text-sm;
+  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+  font-weight: abstracts.$font-weight-medium;
+  color: $header-button-text-color;
+  transition-property: color, background-color, border-color, outline-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+    translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter,
+    display, content-visibility, overlay, pointer-events;
+  transition-timing-function: $default-transition-timing-function;
+  transition-duration: $default-transition-duration;
+
+  &:hover {
+    border-color: $header-button-border-hover-color;
+    background-color: $header-button-bg-hover-color;
+  }
+}

@@ -1,7 +1,9 @@
-$footer-bg-color: $color-background;
-$footer-border-color: $color-border;
-$footer-text-color: $color-text;
-$footer-link-color: $color-links;
+@use "../abstracts/";
+
+$footer-bg-color: abstracts.$color-background;
+$footer-border-color: abstracts.$color-border;
+$footer-text-color: abstracts.$color-text;
+$footer-link-color: abstracts.$color-links;
 
 footer {
   background: $footer-bg-color;
