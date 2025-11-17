@@ -1,4 +1,4 @@
-@use "../abstracts/";
+@use "../abstracts/" as abstracts;
 
 #home-header {
   border-bottom-style: abstracts.$border-style;
@@ -42,4 +42,14 @@
     font-size: $text-3xl;
     line-height: $leading, $text-3xl--line-height;
   }
+}
+
+#home-header .container {
+  @extend .space-y-4;
+}
+
+#affiliation {
+  font-size: abstracts.$text-sm;
+  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+  color: abstracts.$color-zinc-600;
 }

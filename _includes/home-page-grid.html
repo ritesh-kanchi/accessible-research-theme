@@ -1,7 +1,7 @@
 {% if site.pages %}
-<section>
+<section id="home-pages-section">
   <h2>Pages</h2>
-  <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <ul id="home-page-grid">
     {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page' or
     p.data.layout == 'page'" -%} {% for p in pages_list %}
     <li>

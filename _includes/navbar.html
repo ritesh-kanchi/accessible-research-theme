@@ -1,25 +1,12 @@
 {% if page.layout != "home" %}
-<nav
-  class="bg-white dark:bg-zinc-950 top-0 p-4 md:px-8 transition-colors w-full z-50 ease-in-out border-b border-zinc-200 dark:border-zinc-800"
-  role="navigation"
-  aria-label="Main navigation"
->
-  <div class="max-w-6xl mx-auto flex items-center h-full justify-between">
-    <a
-      href="/"
-      class="font-medium text-zinc-900 md:text-zinc-700 md:hover:text-zinc-900 transition-all dark:text-white md:dark:text-zinc-300 dark:md:hover:text-white site-title"
-    >
-      {{ site.title }}
-    </a>
-    <ul
-      class="hidden md:flex items-center justify-end space-x-8 font-sans text-sm"
-    >
+<nav role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a id="site-title" href="/"> {{ site.title }} </a>
+    <ul>
       {%- for path in include.paths -%} {%- assign hyperpage = site.pages |
       where: "path", path | first -%} {%- if hyperpage.title %}
       <li>
-        <a
-          href="{{ hyperpage.url | relative_url }}"
-          class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-all"
+        <a href="{{ hyperpage.url | relative_url }}"
           >{{ hyperpage.title | escape }}</a
         >
       </li>

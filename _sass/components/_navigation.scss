@@ -1,0 +1,47 @@
+@use "../abstracts/" as abstracts;
+
+nav {
+  background-color: abstracts.$color-background;
+  top: 0;
+  padding-inline: calc(abstracts.$spacing * 4);
+  padding: calc(abstracts.$spacing * 4) 0;
+  width: 100%;
+  z-index: 50;
+  border-bottom: 1px solid;
+  border-color: abstracts.$color-border;
+
+  @media screen and (min-width: abstracts.$breakpoint-md) {
+    padding-inline: calc(abstracts.$spacing * 8);
+  }
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#site-title {
+  // font-medium text-zinc-900 md:text-zinc-700 md:hover:text-zinc-900 transition-all dark:text-white md:dark:text-zinc-300 dark:md:hover:text-white site-title"
+  font-weight: abstracts.$font-weight-semibold;
+  color: abstracts.$color-text;
+}
+
+nav .container ul {
+  //   class="hidden md:flex items-center justify-end space-x-8 font-sans text-sm"
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  gap: calc(abstracts.$spacing) * 8;
+  font-size: abstracts.$text-sm;
+  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+
+  @media screen and (min-width: abstracts.$breakpoint-md) {
+    display: flex;
+  }
+}
+
+nav .container ul li a {
+  //  class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-all"
+  color: abstracts.$color-text;
+}

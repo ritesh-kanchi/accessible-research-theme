@@ -1,12 +1,17 @@
-@use "../abstracts/";
+@use "../abstracts/" as abstracts;
 
 #page-header {
   padding-inline: calc(abstracts.$spacing) * 4;
   padding-top: calc(abstracts.$spacing) * 16;
-  @media (width >= abstracts.$breakpoint-md) {
+  @media screen and (min-width: abstracts.$breakpoint-md) {
     padding-inline: calc(abstracts.$spacing) * 8;
   }
 }
+
+#page-header .container {
+  @extend .space-y-4;
+}
+
 #page-header h1 {
   font-size: abstracts.$text-3xl;
   line-height: abstracts.$leading, abstracts.$text-3xl--line-height;

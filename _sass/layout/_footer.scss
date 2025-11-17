@@ -1,4 +1,4 @@
-@use "../abstracts/";
+@use "../abstracts/" as abstracts;
 
 $footer-bg-color: abstracts.$color-background;
 $footer-border-color: abstracts.$color-border;
@@ -8,20 +8,20 @@ $footer-link-color: abstracts.$color-links;
 footer {
   background: $footer-bg-color;
   border-top: 1px solid $footer-border-color;
-  padding-inline: calc($spacing) * 4;
+  padding-inline: calc(abstracts.$spacing) * 4;
 
-  @media screen and (min-width: $breakpoint-md) {
-    padding-inline: calc($spacing) * 8;
+  @media screen and (min-width: abstracts.$breakpoint-md) {
+    padding-inline: calc(abstracts.$spacing) * 8;
   }
 }
 
 footer .container {
-  padding: calc($spacing) * 6;
+  padding: calc(abstracts.$spacing) * 6;
 }
 
 footer .container p {
-  font-size: $text-sm;
-  line-height: $leading, $text-sm--line-height;
+  font-size: abstracts.$text-sm;
+  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
   color: $footer-text-color;
 }
 

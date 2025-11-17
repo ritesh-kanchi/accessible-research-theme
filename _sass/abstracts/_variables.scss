@@ -19,11 +19,11 @@ $color-blue-600: oklch(54.6% 0.245 262.881);
 $color-blue-700: oklch(48.8% 0.243 264.376);
 
 // Fonts
-$font-display: "Inter Tight", "Inter", "SF Pro", ui-sans-serif, system-ui,
-  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-  "Noto Color Emoji" !default;
-$font-text: "Inter", "SF Pro", ui-sans-serif, system-ui, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-display: "Inter Tight", "Inter", "SF Pro", $font-sans !default;
+$font-text: "Inter", "SF Pro", $font-sans !default;
 $font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace !default;
 
@@ -32,7 +32,7 @@ $color-headings: $color-black !default;
 $color-text: $color-zinc-700 !default;
 $color-background: $color-white !default;
 $color-border: $color-zinc-200 !default;
-$color-links: $color-blue-600 !default;
+$color-links: $color-zinc-900 !default;
 
 // Content (dark)
 $color-headings-dark: $color-white !default;
@@ -44,7 +44,7 @@ $color-border-dark: $color-zinc-800 !default;
 $prose-body: $color-text;
 $prose-headings: $color-headings;
 $prose-lead: $color-zinc-600;
-$prose-links: $color-link;
+$prose-links: $color-links;
 $prose-bold: $color-headings;
 $prose-counters: $color-zinc-500;
 $prose-bullets: $color-zinc-300;
@@ -61,7 +61,7 @@ $prose-kbd-shadows: color-mix(
 $prose-code: $color-zinc-900;
 $prose-pre-bg: oklch(20% 0.01 285.885);
 $prose-pre-text: $color-zinc-200;
-$prose-pre-bg: $color-zinc-800;
+$prose-pre-code: $color-zinc-800;
 $prose-th-borders: $color-zinc-300;
 $prose-td-borders: $color-zinc-200;
 
@@ -84,6 +84,11 @@ $font-weight-semibold: 600;
 // Sizing
 $spacing: 0.25rem;
 $leading: 1.5;
+$leading-tight: 1.25;
+
+$space-y-reverse: 0;
+
+$radius-lg: 0.5rem;
 
 $container-3xl: 48rem;
 $container-4xl: 56rem;
@@ -106,3 +111,6 @@ $breakpoint-xl: 80rem;
 $border-style: solid;
 $border-width: 1px;
 $rounded-full: calc(infinity * 1px);
+
+$default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$default-transition-duration: 0.3s;

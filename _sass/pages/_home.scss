@@ -1,0 +1,5 @@
+@use "../abstracts/" as abstracts;
+
+#home-pages-section {
+  padding-top: calc(abstracts.$spacing) * 8;
+}

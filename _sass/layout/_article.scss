@@ -1,5 +1,7 @@
+@use "../abstracts/" as abstracts;
+
 .article-content {
-  color: $color-zinc-700;
+  color: abstracts.$color-zinc-700;
   max-width: 65ch;
   :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     margin-top: 1.25em;
@@ -8,19 +10,19 @@
   :where([class~="lead"]):not(
       :where([class~="not-prose"], [class~="not-prose"] *)
     ) {
-    color: $prose-lead;
+    color: abstracts.$prose-lead;
     font-size: 1.25em;
     line-height: 1.6;
     margin-top: 1.2em;
     margin-bottom: 1.2em;
   }
   :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-links;
+    color: abstracts.$prose-links;
     text-decoration: underline;
     font-weight: 500;
   }
   :where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-bold;
+    color: abstracts.$prose-bold;
     font-weight: 600;
   }
   :where(a strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
@@ -97,20 +99,20 @@
       :where([class~="not-prose"], [class~="not-prose"] *)
     )::marker {
     font-weight: 400;
-    color: $prose-counters;
+    color: abstracts.$prose-counters;
   }
   :where(ul > li):not(
       :where([class~="not-prose"], [class~="not-prose"] *)
     )::marker {
-    color: $prose-bullets;
+    color: abstracts.$prose-bullets;
   }
   :where(dt):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-headings;
+    color: abstracts.$prose-headings;
     font-weight: 600;
     margin-top: 1.25em;
   }
   :where(hr):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    border-color: $prose-hr;
+    border-color: abstracts.$prose-hr;
     border-top-width: 1px;
     margin-top: 3em;
     margin-bottom: 3em;
@@ -118,9 +120,9 @@
   :where(blockquote):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     font-weight: 500;
     font-style: italic;
-    color: $prose-quotes;
+    color: abstracts.$prose-quotes;
     border-inline-start-width: 0.25rem;
-    border-inline-start-color: $prose-quote-borders;
+    border-inline-start-color: abstracts.$prose-quote-borders;
     quotes: "\201C""\201D""\2018""\2019";
     margin-top: 1.6em;
     margin-bottom: 1.6em;
@@ -137,7 +139,7 @@
     content: close-quote;
   }
   :where(h1):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-headings;
+    color: abstracts.$prose-headings;
     font-weight: 800;
     font-size: 2.25em;
     margin-top: 0;
@@ -149,7 +151,7 @@
     color: inherit;
   }
   :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-headings;
+    color: abstracts.$prose-headings;
     font-weight: 700;
     font-size: 1.5em;
     margin-top: 2em;
@@ -161,7 +163,7 @@
     color: inherit;
   }
   :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-headings;
+    color: abstracts.$prose-headings;
     font-weight: 600;
     font-size: 1.25em;
     margin-top: 1.6em;
@@ -173,7 +175,7 @@
     color: inherit;
   }
   :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-headings;
+    color: abstracts.$prose-headings;
     font-weight: 600;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
@@ -199,8 +201,9 @@
   :where(kbd):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     font-weight: 500;
     font-family: inherit;
-    color: $prose-kbd;
-    box-shadow: 0 0 0 1px $prose-kbd-shadows, 0 3px 0 $prose-kbd-shadows;
+    color: abstracts.$prose-kbd;
+    box-shadow: 0 0 0 1px abstracts.$prose-kbd-shadows,
+      0 3px 0 abstracts.$prose-kbd-shadows;
     font-size: 0.875em;
     border-radius: 0.3125rem;
     padding-top: 0.1875em;
@@ -209,7 +212,7 @@
     padding-inline-start: 0.375em;
   }
   :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-code;
+    color: abstracts.$prose-code;
     font-weight: 600;
     font-size: 0.875em;
   }
@@ -251,8 +254,6 @@
     color: inherit;
   }
   :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-pre-code;
-    background-color: $prose-pre-bg;
     overflow-x: auto;
     font-weight: 400;
     font-size: 0.875em;
@@ -296,10 +297,10 @@
   }
   :where(thead):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     border-bottom-width: 1px;
-    border-bottom-color: $prose-th-borders;
+    border-bottom-color: abstracts.$prose-th-borders;
   }
   :where(thead th):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-headings;
+    color: abstracts.$prose-headings;
     font-weight: 600;
     vertical-align: bottom;
     padding-inline-end: 0.5714286em;
@@ -308,7 +309,7 @@
   }
   :where(tbody tr):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     border-bottom-width: 1px;
-    border-bottom-color: $prose-td-borders;
+    border-bottom-color: abstracts.$prose-td-borders;
   }
   :where(tbody tr:last-child):not(
       :where([class~="not-prose"], [class~="not-prose"] *)
@@ -320,7 +321,7 @@
   }
   :where(tfoot):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     border-top-width: 1px;
-    border-top-color: $prose-th-borders;
+    border-top-color: abstracts.$prose-th-borders;
   }
   :where(tfoot td):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     vertical-align: top;
@@ -333,7 +334,7 @@
     margin-bottom: 0;
   }
   :where(figcaption):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: $prose-captions;
+    color: abstracts.$prose-captions;
     font-size: 0.875em;
     line-height: 1.4285714;
     margin-top: 0.8571429em;
@@ -451,7 +452,7 @@
     ) {
     margin-bottom: 0;
   }
-  max-width: $container-4xl;
+  max-width: abstracts.$container-4xl;
 
   &
     :is(
@@ -459,8 +460,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    $font-weight: $font-weight-semibold;
-    font-weight: $font-weight-semibold;
+    font-weight: abstracts.$font-weight-semibold;
   }
   &
     :is(
@@ -468,7 +468,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    color: $color-black;
+    color: abstracts.$color-black;
   }
   @media (prefers-color-scheme: dark) {
     &
@@ -477,7 +477,7 @@
             :where([class~="not-prose"], [class~="not-prose"] *)
           )
       ) {
-      color: $color-white;
+      color: abstracts.$color-white;
     }
   }
   &
@@ -486,7 +486,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    border-color: $color-zinc-200;
+    border-color: abstracts.$color-zinc-200;
   }
   &
     :is(
@@ -494,8 +494,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    $font-weight: $font-weight-normal;
-    font-weight: $font-weight-normal;
+    font-weight: abstracts.$font-weight-normal;
   }
   &
     :is(
@@ -503,7 +502,7 @@
           :where([class~="not-prose"], [class~="not-prose"] *)
         )
     ) {
-    color: $color-zinc-600;
+    color: abstracts.$color-zinc-600;
   }
   &
     :is(
@@ -520,7 +519,7 @@
             :where([class~="not-prose"], [class~="not-prose"] *)
           )
       ) {
-      border-color: $color-zinc-800;
+      border-color: abstracts.$color-zinc-800;
     }
   }
   @media (prefers-color-scheme: dark) {
@@ -530,24 +529,23 @@
             :where([class~="not-prose"], [class~="not-prose"] *)
           )
       ) {
-      color: $color-zinc-400;
+      color: abstracts.$color-zinc-400;
     }
   }
   &
     :is(
       :where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *))
     ) {
-    $font-weight: $font-weight-semibold;
-    font-weight: $font-weight-semibold;
+    font-weight: abstracts.$font-weight-semibold;
   }
 }
 
 .article-content pre {
-  border-style: $border-style;
-  border-width: 1px;
-  border-color: $color-zinc-200;
+  border-style: abstracts.$border-style;
+  border-width: abstracts.$border-width;
+  border-color: abstracts.$color-zinc-200;
   @media (prefers-color-scheme: dark) {
-    border-color: $color-zinc-800;
+    border-color: abstracts.$color-zinc-800;
   }
 }
 .article-content blockquote p:first-of-type::before,

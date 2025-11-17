@@ -1,0 +1,67 @@
+@use "../abstracts/" as abstracts;
+
+#nav-toggle {
+  @media screen and (min-width: abstracts.$breakpoint-md) {
+    display: none;
+  }
+
+  position: fixed;
+  top: calc(abstracts.$spacing) * 4;
+  right: calc(abstracts.$spacing) * 4;
+  width: calc(abstracts.$spacing) * 12;
+  height: calc(abstracts.$spacing) * 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: abstracts.$rounded-full;
+  font-weight: abstracts.$font-weight-medium;
+  background-color: abstracts.$color-zinc-100;
+  border-style: abstracts.$border-style;
+  border-width: abstracts.$border-width;
+  border-color: abstracts.$color-border;
+  z-index: 50;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#nav-toggle svg {
+  width: calc(abstracts.$spacing) * 6;
+  height: calc(abstracts.$spacing) * 6;
+}
+
+#nav-toggle #nav-close-icon {
+  display: none;
+}
+
+#mobile-menu {
+  //   class="fixed space-y-4 top-0 left-0 px-4 py-24 transition ease-in-out duration-200 w-screen h-screen flex-col items-start justify-start bg-white dark:bg-zinc-950 z-40 hidden"
+  @extend .space-y-4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-inline: calc(abstracts.$spacing) * 4;
+  padding-block: calc(abstracts.$spacing) * 24;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: abstracts.$color-background;
+  z-index: 40;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  display: none;
+}
+
+#mobile-menu h2 {
+  font-size: abstracts.$text-lg;
+  line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+  font-weight: abstracts.$font-weight-semibold;
+}
+
+#mobile-menu ul {
+  @extend .space-y-2;
+}
