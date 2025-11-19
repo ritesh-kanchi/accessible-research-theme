@@ -41,10 +41,22 @@ $colors-zinc: (
   950: $color-zinc-950,
 );
 
-$colors-blue: (
-  500: $color-blue-500,
-  600: $color-blue-600,
-  700: $color-blue-700,
+$colors-accent: (
+  primary: $color-blue-600,
+  primary-hover: $color-blue-700,
+  primary-text: $color-white,
+  secondary: $color-zinc-600,
+  secondary-hover: $color-zinc-700,
+  secondary-text: $color-black,
+);
+
+$colors-accent-dark: (
+  primary: $color-blue-600,
+  primary-hover: $color-blue-700,
+  primary-text: $color-white,
+  secondary: $color-zinc-600,
+  secondary-hover: $color-zinc-700,
+  secondary-text: $color-white,
 );
 
 $colors-light: (
@@ -70,11 +82,7 @@ $colors-dark: (
     --color-#{$key}: #{$value};
   }
 
-  @each $key, $value in $colors-zinc {
-    --color-#{$key}: #{$value};
-  }
-
-  @each $key, $value in $colors-blue {
+  @each $key, $value in $colors-accent {
     --color-#{$key}: #{$value};
   }
 }
@@ -84,6 +92,10 @@ $colors-dark: (
     @each $key, $value in $colors-dark {
       --color-#{$key}: #{$value};
     }
+
+    @each $key, $value in $colors-accent-dark {
+      --color-#{$key}: #{$value};
+    }
   }
 }
 
@@ -91,7 +103,7 @@ $colors-dark: (
 $prose-body: var(--color-text);
 $prose-headings: var(--color-headings);
 $prose-background: var(--color-background);
-$prose-lead: var(--color-zinc-500);
+$prose-lead: var(--color-text);
 $prose-links: var(--color-links);
 $prose-bold: $prose-headings;
 $prose-counters: var(--color-text);
@@ -100,18 +112,18 @@ $prose-hr: var(--color-border);
 $prose-quotes: var(--color-text);
 $prose-quote-borders: $prose-hr;
 $prose-captions: var(--color-text);
-$prose-kbd: var(--color-zinc-900);
+$prose-kbd: var(--color-text);
 $prose-kbd-shadows: color-mix(
   in oklab,
   oklch(21% 0.006 285.885) 10%,
   transparent
 );
-$prose-code: var(--color-zinc-900);
-$prose-pre-bg: oklch(20% 0.01 285.885);
-$prose-pre-text: var(--color-zinc-200);
-$prose-pre-code: var(--color-zinc-800);
-$prose-th-borders: var(--color-zinc-300);
-$prose-td-borders: var(--color-zinc-200);
+$prose-code: var(--color-headings);
+$prose-pre-bg: var(--color-background);
+$prose-pre-text: var(--color-text);
+$prose-pre-code: var(--color-text);
+$prose-th-borders: var(--color-border);
+$prose-td-borders: var(--color-border);
 
 // Typography
 $text-sm: 0.875rem;

@@ -7,11 +7,12 @@ h4,
 h5,
 h6 {
   font-family: abstracts.$font-display;
+  color: var(--color-headings);
 }
 
 html,
 body {
-  color: abstracts.$prose-body;
+  color: var(--color-text);
   font-family: abstracts.$font-text;
 }
 
