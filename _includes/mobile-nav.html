@@ -30,7 +30,7 @@
   <span class="sr-only">Menu</span>
 </button>
 
-<div id="mobile-menu">
+<div id="mobile-menu" style="display: none">
   <h2>Pages</h2>
   <ul>
     {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page' or

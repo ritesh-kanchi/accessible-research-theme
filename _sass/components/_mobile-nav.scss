@@ -2,7 +2,7 @@
 
 #nav-toggle {
   @media screen and (min-width: abstracts.$breakpoint-md) {
-    display: none;
+    display: none !important;
   }
 
   position: fixed;
@@ -30,9 +30,9 @@
     height: calc(abstracts.$spacing) * 6;
   }
 
-  #nav-close-icon {
-    display: none;
-  }
+  // #nav-close-icon {
+  //   display: none;
+  // }
 }
 
 #mobile-menu {
@@ -53,7 +53,6 @@
   z-index: 40;
   transition-property: all;
   transition-timing-function: ease-in-out;
-  display: none;
 
   h2 {
     font-size: abstracts.$text-lg;
@@ -63,5 +62,6 @@
 
   ul {
     @extend .space-y-2;
+    width: 100%;
   }
 }

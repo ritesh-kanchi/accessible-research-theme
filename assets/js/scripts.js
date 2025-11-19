@@ -8,23 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!toggle || !mobileMenu) return;
 
   function openMenu() {
-    mobileMenu.classList.remove("hidden");
-    mobileMenu.classList.add("flex");
+    mobileMenu.style.display = "flex";
     toggle.setAttribute("aria-expanded", "true");
     toggle.setAttribute("aria-label", "Close Menu");
-    if (openIcon) openIcon.classList.add("hidden");
-    if (closeIcon) closeIcon.classList.remove("hidden");
-    document.documentElement.classList.add("no-scroll");
+    if (openIcon) openIcon.style.display = "none";
+    if (closeIcon) closeIcon.style.display = "block";
+    document.documentElement.style.overflow = "hidden";
   }
 
   function closeMenu() {
-    mobileMenu.classList.add("hidden");
-    mobileMenu.classList.remove("flex");
+    mobileMenu.style.display = "none";
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open Menu");
-    if (openIcon) openIcon.classList.remove("hidden");
-    if (closeIcon) closeIcon.classList.add("hidden");
-    document.documentElement.classList.remove("no-scroll");
+    if (openIcon) openIcon.style.display = "block";
+    if (closeIcon) closeIcon.style.display = "none";
+    document.documentElement.style.overflow = "";
   }
 
   toggle.addEventListener("click", function () {
