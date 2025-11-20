@@ -12,20 +12,31 @@
     <h1>{{ site.title }}</h1>
     {% if site.content.authors %}
     <p id="authors">
-      {%- for author in site.content.authors -%} {%- if forloop.first -%}
+      {%- for author in site.content.authors -%} {%- if forloop.first -%} {%- if
+      author.img -%}
+      <img src="{{ author.img }}" alt="{{ author.name | escape }}" />
+      {%- endif -%} {%- if author.url -%}
       <a href="{{ author.url }}" target="_blank" class="link"
         >{{ author.name | escape }}</a
       >
-      {%- elsif forloop.last -%} {%- if forloop.length > 1 -%}&nbsp;&amp; {%
-      endif -%}
+      {%- else -%} {{ author.name | escape }} {%- endif -%} {%- elsif
+      forloop.last -%} {%- if forloop.length > 1 -%}&nbsp;&amp; {% endif -%} {%-
+      if author.img -%}
+      <img src="{{ author.img }}" alt="{{ author.name | escape }}" />
+      {%- endif -%} {%- if author.url -%}
+
       <a href="{{ author.url }}" target="_blank" class="link"
         >{{ author.name | escape }}</a
       >
-      {%- else -%} ,
+      {%- else -%} {{ author.name | escape }} {%- endif -%} {%- else -%} , {%-
+      if author.img -%}
+      <img src="{{ author.img }}" alt="{{ author.name | escape }}" />
+      {%- endif -%} {%- if author.url -%}
       <a href="{{ author.url }}" target="_blank" class="link"
         >{{ author.name | escape }}</a
       >
-      {%- endif -%} {%- endfor -%}
+      {%- else -%} {{ author.name | escape }} {%- endif -%} {%- endif -%} {%-
+      endfor -%}
     </p>
     {% endif %} {% if site.content.affiliation %}
     <p id="affiliation">
