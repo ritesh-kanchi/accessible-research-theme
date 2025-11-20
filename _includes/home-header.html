@@ -13,18 +13,25 @@
     {% if site.content.authors %}
     <p id="authors">
       {%- for author in site.content.authors -%} {%- if forloop.first -%} {%- if
-      author.url -%}
+      author.img -%}
+      <img src="{{ author.img }}" alt="{{ author.name | escape }}" />
+      {%- endif -%} {%- if author.url -%}
       <a href="{{ author.url }}" target="_blank" class="link"
         >{{ author.name | escape }}</a
       >
       {%- else -%} {{ author.name | escape }} {%- endif -%} {%- elsif
       forloop.last -%} {%- if forloop.length > 1 -%}&nbsp;&amp; {% endif -%} {%-
-      if author.url -%}
+      if author.img -%}
+      <img src="{{ author.img }}" alt="{{ author.name | escape }}" />
+      {%- endif -%} {%- if author.url -%}
+
       <a href="{{ author.url }}" target="_blank" class="link"
         >{{ author.name | escape }}</a
       >
       {%- else -%} {{ author.name | escape }} {%- endif -%} {%- else -%} , {%-
-      if author.url -%}
+      if author.img -%}
+      <img src="{{ author.img }}" alt="{{ author.name | escape }}" />
+      {%- endif -%} {%- if author.url -%}
       <a href="{{ author.url }}" target="_blank" class="link"
         >{{ author.name | escape }}</a
       >
