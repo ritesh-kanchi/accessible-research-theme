@@ -1,14 +1,10 @@
 @use "../abstracts/" as abstracts;
 
-$footer-bg-color: var(--color-background);
-$footer-border-color: var(--color-border);
-$footer-text-color: var(--color-text);
-$footer-link-color: var(--color-links);
-
 footer {
-  background: $footer-bg-color;
-  border-top: 1px solid $footer-border-color;
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
   padding-inline: calc(abstracts.$spacing) * 4;
+  color: var(--color-text);
 
   @media (min-width: abstracts.$breakpoint-md) {
     padding-inline: calc(abstracts.$spacing) * 8;
@@ -20,10 +16,9 @@ footer {
     p {
       font-size: abstracts.$text-sm;
       line-height: abstracts.$leading, abstracts.$text-sm--line-height;
-      color: $footer-text-color;
     }
     a {
-      color: $footer-link-color;
+      color: var(--color-links);
       text-decoration: underline;
     }
   }

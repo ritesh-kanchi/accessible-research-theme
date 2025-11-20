@@ -1,4 +1,3 @@
-// Mobile nav toggle for Jekyll site
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("nav-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeMenu();
   });
 
-  // close on Escape
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeMenu();
   });

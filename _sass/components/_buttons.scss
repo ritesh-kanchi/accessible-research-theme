@@ -17,8 +17,8 @@
     text-decoration-color, fill, stroke, opacity, box-shadow, transform,
     translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter,
     display, content-visibility, overlay, pointer-events;
-  transition-timing-function: $default-transition-timing-function;
-  transition-duration: $default-transition-duration;
+  transition-timing-function: abstracts.$default-transition-timing-function;
+  transition-duration: abstracts.$default-transition-duration;
 
   &:hover {
     border-color: var(--color-primary-hover);

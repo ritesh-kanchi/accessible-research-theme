@@ -29,14 +29,9 @@
     width: calc(abstracts.$spacing) * 6;
     height: calc(abstracts.$spacing) * 6;
   }
-
-  // #nav-close-icon {
-  //   display: none;
-  // }
 }
 
 #mobile-menu {
-  //   class="fixed space-y-4 top-0 left-0 px-4 py-24 transition ease-in-out duration-200 w-screen h-screen flex-col items-start justify-start bg-white dark:bg-zinc-950 z-40 hidden"
   @extend .space-y-4;
   position: fixed;
   top: 0;

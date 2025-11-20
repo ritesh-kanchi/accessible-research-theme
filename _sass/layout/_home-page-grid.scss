@@ -1,7 +1,6 @@
 @use "../abstracts/" as abstracts;
 
 #home-page-grid {
-  // grid grid-cols-1 md:grid-cols-3 gap-4
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: calc(abstracts.$spacing) * 4;
