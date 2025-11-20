@@ -31,11 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
     else openMenu();
   });
 
-  // close when any mobile link clicked
   mobileMenu.addEventListener("click", function (e) {
     const link = e.target.closest("a");
     if (!link) return;
-    // if link is internal, close menu. allow new tab for resume
+
     closeMenu();
   });
 
@@ -43,9 +42,4 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeMenu();
   });
-
-  // Prevent body scroll when mobile menu open
-  const style = document.createElement("style");
-  style.innerHTML = ".no-scroll { overflow: hidden; height: 100%; }";
-  document.head.appendChild(style);
 });
