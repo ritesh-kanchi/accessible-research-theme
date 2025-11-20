@@ -12,15 +12,15 @@
   }
 
   h1 {
-    max-width: $container-5xl;
-    font-size: $text-3xl;
-    line-height: $leading, $text-3xl--line-height;
-    line-height: $leading-tight;
-    font-weight: $font-weight-semibold;
+    max-width: abstracts.$container-5xl;
+    font-size: abstracts.$text-3xl;
+    line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
+    line-height: abstracts.$leading-tight;
+    font-weight: abstracts.$font-weight-semibold;
     text-wrap: balance;
-    @media (min-width: $breakpoint-md) {
-      font-size: $text-3xl;
-      line-height: $leading, $text-3xl--line-height;
+    @media (min-width: abstracts.$breakpoint-md) {
+      font-size: abstracts.$text-3xl;
+      line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
     }
   }
 
