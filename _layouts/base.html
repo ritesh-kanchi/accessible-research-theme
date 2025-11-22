@@ -3,21 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      {% if page.title and page.layout != "home" %} {{ page.title }} / {% endif
-      %}{{ site.title }}
-    </title>
-    {% if page.description or site.description %}
-    <meta
-      name="description"
-      content="{{ page.description | default: site.description }}"
-    />
-    {% endif %}
+    {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-    <!-- <link
-      rel="stylesheet"
-      href="{{ '/assets/css/highlight.css' | relative_url }}"
-    /> -->
   </head>
   <body>
     {%- include navbar.html -%} {{content}} {%- include footer.html -%}
